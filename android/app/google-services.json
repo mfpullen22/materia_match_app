@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "534461420955",
+    "project_id": "materia-match-app",
+    "storage_bucket": "materia-match-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534461420955:android:6ae51e23e9db26b9c7bd3e",
+        "android_client_info": {
+          "package_name": "com.example.materia_match_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUfjNEIJJeGje4pxB3LIp63GLm-3VmSMc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
