@@ -71,4 +71,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'materia-match-app.firebasestorage.app',
     iosBundleId: 'com.example.materiaMatchApp',
   );
+
 }
