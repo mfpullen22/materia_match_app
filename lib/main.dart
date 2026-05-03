@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:materia_match_app/auth_screen.dart';
 import 'firebase_options.dart';
 import 'package:forui/forui.dart';
 import 'package:materia_match_app/home_screen.dart';
@@ -32,9 +34,8 @@ class Application extends StatelessWidget {
         : FThemes.slate.dark.desktop;
 
     return MaterialApp(
-      // TODO: replace with your application's supported locales.
+      debugShowCheckedModeBanner: false,
       supportedLocales: FLocalizations.supportedLocales,
-      // TODO: add your application's localizations delegates.
       localizationsDelegates: const [...FLocalizations.localizationsDelegates],
       // MaterialApp's theme is also animated by default with the same duration and curve.
       // See https://api.flutter.dev/flutter/material/MaterialApp/themeAnimationStyle.html
@@ -48,9 +49,19 @@ class Application extends StatelessWidget {
         child: FToaster(child: FTooltipGroup(child: child!)),
       ),
       // You can also replace FScaffold with Material Scaffold.
-      home: const FScaffold(
-        // TODO: replace with your widget.
-        child: HomeScreen(),
+      home: StreamBuilder(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Scaffold(
+              body: Center(child: CircularProgressIndicator()),
+            );
+          } else if (snapshot.hasData) {
+            return const HomeScreen();
+          } else {
+            return const AuthScreen();
+          }
+        },
       ),
     );
   }
