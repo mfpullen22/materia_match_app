@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:materia_match_app/auth_screen.dart';
+import 'package:materia_match_app/features/auth/presentation/auth_screen.dart';
 import 'firebase_options.dart';
 import 'package:forui/forui.dart';
 import 'package:materia_match_app/home_screen.dart';

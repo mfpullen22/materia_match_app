@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
         onTap: () {},
       ),
       _HomeAction(
-        title: "Join or Switch Team",
+        title: "Join or Create Team",
         icon: Icons.group_add_rounded,
         onTap: () {},
       ),
