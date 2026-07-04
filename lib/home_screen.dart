@@ -1,6 +1,7 @@
 import "package:firebase_auth/firebase_auth.dart";
 import "package:flutter/material.dart";
 import "package:forui/forui.dart";
+import "package:materia_match_app/features/teams/presentation/team_management_screen.dart";
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -27,7 +28,11 @@ class HomeScreen extends StatelessWidget {
       _HomeAction(
         title: "Join or Create Team",
         icon: Icons.group_add_rounded,
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (_) => const TeamManagementScreen()),
+          );
+        },
       ),
       _HomeAction(
         title: "My Profile",
